@@ -5,6 +5,7 @@ import { connectDB, disconnectDB } from "./config/db.js";
 // Import Routes
 import movieRoutes from "./routes/movieRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import watchlistRoutes from "./routes/watchlistRoutes.js";
 
 config(); // Load environment variables from .env file
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 // API Routes
 app.use("/movies", movieRoutes);
 app.use("/auth", authRoutes);
+app.use("/watchlist", watchlistRoutes);
 
 const PORT = 5001;
 const server = app.listen(PORT, async (error) => {
